@@ -1,0 +1,15 @@
+class GitManager {
+    String credentialsId
+    String branch
+    String url
+
+    def configure(String credentials, String branch, String url) {
+        this.credentialsId = credentials
+        this.branch = branch
+        this.url = url
+    }
+
+    def clone() {
+        checkout( branch: branch, credentialsId: credentialsId, url: url)
+    }
+}

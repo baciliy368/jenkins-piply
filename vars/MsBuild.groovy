@@ -1,5 +1,7 @@
-def call(String projectFolderName, String pathToNuget, String command) {
-    dir(String.format("\\%s", projectFolderName)) {
-        bat String.format('%s %s',pathToNuget, command)
-    }
+def call(String projectFolderName, String pathToMsBuild) {
+    bat String.format('%s %s',pathToMsBuild, getPathToSolution(projectFolderName))
+}
+
+def getPathToSolution(String projectName) {
+    return String.format("\\%s\\%s.sln", projectName)
 }

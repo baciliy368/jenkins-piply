@@ -1,3 +1,7 @@
 def call(String pathToNuget, String command) {
-    bat String.format('%s %s', pathToNuget, command)
+    dir("\\PaintTests") {
+        dir(pathToNuget) {
+            bat String.format('nuget.exe %s', command)
+        }
+    }
 }

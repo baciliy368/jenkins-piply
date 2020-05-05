@@ -3,5 +3,5 @@ def call(String projectFolderName, String pathToMsBuild) {
 }
 
 def getPathToSolution(String projectName) {
-    return String.format("\\%s\\%s.sln", projectName)
+    return String.format("\\%s\\%s.sln", projectName, projectName)
 }

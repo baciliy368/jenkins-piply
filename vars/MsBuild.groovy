@@ -1,5 +1,7 @@
 def call(String projectFolderName, String pathToMsBuild) {
-    bat String.format('%s %s',pathToMsBuild, getPathToSolution(projectFolderName))
+    dir(${workspace}) {
+        bat String.format('%s %s',pathToMsBuild, getPathToSolution(projectFolderName))
+    }
 }
 
 def getPathToSolution(String projectName) {

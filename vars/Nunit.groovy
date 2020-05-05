@@ -8,7 +8,7 @@ def getDllFile(String projectName) {
 }
 
 def getResultParameter(String projectName, String resultFile, String format) {
-    return String.format("--result=%s\\%s;format=%s",getDebugFolderPath(projectName), projectName, resultFile, format)
+    return String.format("--result=%s\\%s;format=%s",getDebugFolderPath(projectName), resultFile, format)
 }
 
 def getDebugFolderPath(String projectName) {

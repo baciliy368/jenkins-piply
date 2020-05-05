@@ -1,5 +1,5 @@
 def call(String command) {
-    dir ('%WORKSPACE%\\${env.JOB_NAME}@libs\\custom-pip\\resources') {
+    dir ('\\resources') {
         bat String.format('nuget.exe %s', command)
     }
 }

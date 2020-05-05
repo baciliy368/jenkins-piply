@@ -4,9 +4,13 @@ def call(String projectFolderName, String pathToNunitConsole, String resultFile,
 }
 
 def getDllFile(String projectName) {
-    return String.format("${workspace}\\\\${env.JOB_NAME}\\%s\\bin\\Debug\\%s.dll", projectName, projectName)
+    return String.format("%s\\%s.dll", getDebugFolderPath(projectName), projectName, projectName)
 }
 
 def getResultParameter(String projectName, String resultFile, String format) {
-    return String.format("--result=${workspace}\\${env.JOB_NAME}\\%s\\bin\\Debug\\%s;format=%s", projectName, resultFile, format)
+    return String.format("--result=%s\\%s;format=%s",getDebugFolderPath(projectName), projectName, resultFile, format)
+}
+
+def getDebugFolderPath(String projectName) {
+    return String.format("${workspace}\\${env.JOB_NAME}\\%s\\bin\\Debug", projectName)
 }

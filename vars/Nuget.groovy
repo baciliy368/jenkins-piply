@@ -1,5 +1,5 @@
 def call(String command) {
-    dir ('\\resources') {
-        bat String.format('nuget.exe %s', command)
-    }
+    def nugetResource = getClass().getResource("\\resources\\nuget.exe")
+        bat String.format('%s %s', nugetResource, command)
+
 }

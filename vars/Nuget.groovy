@@ -1,4 +1,4 @@
-def call(String pathToNuGet, String command) {
+def call(String command) {
     dir("${env.WORKSPACE}\\pipe@lib\\resources"){
         sh "pwd"
         bat String.format('nuget.exe %s', command)

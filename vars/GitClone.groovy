@@ -1,4 +1,3 @@
-def сall(String credentials, String branch, String url) {
+def call(credentials, branch, url) {
     checkout( branch: branch, credentialsId: credentials, url: url)
 }
-
